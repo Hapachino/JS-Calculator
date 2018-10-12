@@ -10,30 +10,36 @@
 <body>
   <h1></h1>
   <div class="calculator">
-    <input type="number" placeholder="0">
+    <input class="output" type="number" placeholder="0">
     <div class="calc-buttons">
-      <button class="calc-button clear">C</button>
-      <button class="calc-button operator">&divide;</button>
-
-      <button class="calc-button seven">7</button>
-      <button class="calc-button eight">8</button>
-      <button class="calc-button nine">9</button>
-      <button class="calc-button times operator">&times;</button>
-
-      <button class="calc-button four">4</button>
-      <button class="calc-button five">5</button>
-      <button class="calc-button six">6</button>
-      <button class="calc-button minus operator">&minus;</button>
-
-      <button class="calc-button one">1</button>
-      <button class="calc-button two">2</button>
-      <button class="calc-button three">3</button>
-      <button class="calc-button plus operator">&plus;</button>
-
-      <button class="calc-button zero">0</button>
       
-      <button class="calc-button equal">&equals;</button>
+      <button data-set="plus" class="calc-button operator">&plus;</button>
+      <button data-set="minus" class="calc-button operator">&minus;</button>
+      <button data-set="times" class="calc-button operator">&times;</button>
+      <button data-set="divide" class="calc-button operator">&divide;</button>
+      
+      <button data-set="7" class="calc-button">7</button>
+      <button data-set="8" class="calc-button">8</button>
+      <button data-set="9" class="calc-button">9</button>
+      <button data-set="equals" class="calc-button operator">&equals;</button>
+      
+
+      <button data-set="4" class="calc-button">4</button>
+      <button data-set="5" class="calc-button">5</button>
+      <button data-set="6" class="calc-button">6</button>
+      
+
+      <button data-set="7" class="calc-button">1</button>
+      <button data-set="8" class="calc-button">2</button>
+      <button data-set="9" class="calc-button">3</button>
+      
+      <button class="calc-button">&middot;</button>
+      <button data-set="0" class="calc-button">0</button>
+      <button data-set="clear" class="calc-button">C</button>
+      
+      
     </div>
   </div>
+  <script src=app.js></script>
 </body>
 </html>

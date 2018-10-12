@@ -12,14 +12,15 @@ html {
 
 body {
   padding-top: 20rem;
+  background-color: slateblue;
 }
 
 .calculator {
-  max-width: 40rem;
+  max-width: 50rem;
   margin: 0 auto;
-  border: 3px solid black;
-  border-radius: 0.5rem;
-  
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 1rem 1rem 0 0;
 }
 
 .calculator input {
@@ -27,39 +28,39 @@ body {
   border: none;
   text-align: right;
   font-size: 10rem;
-  border-bottom: 3px solid black;
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+}
+
+.calculator input::placeholder {
+  color: white;
 }
 
 .calc-buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: .5rem;
-  margin: .5rem;
+  grid-gap: px;
 }
 
 .calc-button {
-  background: grey;
+  background: white;
   border: 1px solid black;
   padding: 2rem;
-  color: white;
-  border-radius: 5px;
-  font-size: 2rem;
   cursor: pointer;
-}
-
-.clear {
-  background: indianred;
-  grid-column: span 3;
-}
-
-.equal {
-  background: teal;
+  outline: none;
+  font-size: 4rem;
 }
 
 .operator {
   background: cornflowerblue;
 }
 
-.zero {
-  grid-column: span 3;
+[data-set="clear"] {
+  background: indianred;
+}
+
+[data-set="equals"] {
+  background: teal;
+  grid-row-start: span 4;
 }
