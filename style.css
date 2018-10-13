@@ -56,11 +56,11 @@ body {
   background: cornflowerblue;
 }
 
-[data-set="clear"] {
+[data-key="clear"] {
   background: indianred;
 }
 
-[data-set="equals"] {
+[data-key="equals"] {
   background: teal;
   grid-row-start: span 4;
 }

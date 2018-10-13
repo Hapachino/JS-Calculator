@@ -1,44 +1,61 @@
-let output = document.querySelector('.output');
-let calcButtons = document.querySelector('.calc-buttons');
+const output = document.querySelector('.output');
+const calcButtons = document.querySelector('.calc-buttons');
 
 let total = '',
-    number,
-    operator;
-  
+    number = '',
+    operator,
+    operatorClicked = false;
 
-function calculate(total, operator, number) {
+
+function calculate() {
+  total = Number(total);
+  number = Number(number);
+
   if (operator === 'divide') {
-    return total / number;
+    total /= number;
   } else if (operator === 'times') {
-    return total / number;
+    total *= number;
   } else if (operator === 'minus') {
-    return total / number;
+    total -= number;
   } else if (operator === 'plus') {
-    return total / number;
-  } else if (operator === 'equal') {
-    return total / number;
+    total += number;
   } else if (operator === 'clear') {
-    return 0;
+    total = '';
   }
 }
 
-
 function handleInput(event) {
-  let id = event.target.id;
-  let classList = event.target.classList;
-
-  if (numericInputs[id]) {
-    total += numericInputs[id];
-    output.value = total;
-  } else if (classList.contains(operator)) {
-    operator = id;
+  const clicked = event.target;
+  // if operator, store data-set
+  if (clicked.classList.contains('operator')) {
+    let action = clicked.dataset.key;
+  
+    if (action === 'equals' && operatorClicked && number) {
+      calculate();
+      number = '';
+      output.value = total.toString();
+      operatorClicked = false;
+    } else {
+      operator = action;
+      operatorClicked = true;
+    }
+  } else { // else, it's a number
+    // if not operator, append to total
+    if (operatorClicked) {
+      number += clicked.textContent;
+      output.value = number;
+    } else {
+      total += clicked.textContent;
+      output.value = total;
+    }
   }
+}
   
 
 
   // handle input overflow
   // handle calculation  overflow
 
-}
+
 
 calcButtons.addEventListener('click', handleInput);
