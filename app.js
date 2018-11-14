@@ -39,7 +39,8 @@ function handleInput(event) {
       operator = action;
       operatorClicked = true;
     }
-  } else { // else, it's a number
+  // else, it's a number
+  } else { 
     // if not operator, append to total
     if (operatorClicked) {
       number += clicked.textContent;
@@ -50,12 +51,8 @@ function handleInput(event) {
     }
   }
 }
-  
-
 
   // handle input overflow
   // handle calculation  overflow
-
-
 
 calcButtons.addEventListener('click', handleInput);

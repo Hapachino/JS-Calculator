@@ -40,7 +40,7 @@ body {
 .calc-buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: px;
+  grid-gap: 1px;
 }
 
 .calc-button {
